@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Cloud Craft for Spatial Cadets</title>
+
+		<meta name="description" content="Cloud Craft for Spatial Cadets">
+		<meta name="author" content="Katie Miller">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+        <style>
+            .overlay { color: white !important; background: rgba(0,0,0,0.65); }
+            .overlay a:link, .overlay a:visited { color: white !important; }
+            .bold { font-weight: bold !important; }
+            .border { border: 1px solid black !important; }
+        </style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+				    <section>
+					    <h1>Cloud Craft for Spatial Cadets</h1>
+                        <img src="images/cloudpanda.png" width="500px"/>
+                        <p>Katie Miller (<a href="http://twitter.com/codemiller" target="_blank">@codemiller</a>)</br>
+                                         <a href="http://openshift.com" target="_blank">OpenShift</a> Developer Advocate at <a href="http://redhat.com" target="_blank">Red Hat</a></p>
+				    </section>
+                    <section>
+                        <img src="images/cat-tp.gif" width="500px"/>
+                    </section>
+                    <section>
+                        <div><iframe src="http://conveniences-cloudcraft.rhcloud.com" width="1024" height="768"></iframe></div>
+                    </section>
+                </section>
+   			    <section data-background="images/dashboard.jpg">
+                    <h2 class="overlay"><a href="http://blazemeter.com/" target="_blank">Start Your Engines</a></h2>
+				</section>
+    		    <section>
+                    <section data-background="images/globe.jpg">
+                        <h2 class="overlay">The Spatial Zone</h2>
+                    </section>
+                    <section>
+                        <h2>Terminology</h2>
+                        <ul>
+                            <li class="fragment">Datum</li>
+                            <li class="fragment">Projection</li>
+                        </ul>
+                    </section>
+		            <section>
+                        <h2>Data Formatting</h2>
+                        <ul>
+                            <li class="fragment"><a href="http://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank">WGS84 (EPSG:4326)</a></li>
+                            <li class="fragment"><a href="http://en.wikipedia.org/wiki/Shapefile" target="_blank">Shapefile</a></li>
+                            <li class="fragment"><a href="http://geojson.org" target="_blank">GeoJSON</a></li>
+                            <li class="fragment"><a href="http://www.gdal.org" target="_blank">ogr2ogr</a></li>
+                        </ul>
+                    </section>
+		            <section>
+                        <h2>Finding Data</h2>
+                        <ul>
+                            <li><a href="http://data.govt.nz" target="_blank">Data.govt.nz</a> and <a href="http://data.gov.au" target="_blank">Data.gov.au</a></li>
+                            <li><a href="http://cat.open.org.nz" target="_blank">NZ's Open Data Catalogue</a></li>
+                            <li><a href="https://koordinates.com" target="_blank">Koordinates</a></li>
+                            <li><a href="http://geocommons.com" target="_blank">GeoCommons</a></li>
+                            <li><a href="http://wiki.openstreetmap.org/wiki/Planet.osm" target="_blank">OpenStreetMap</a></li>
+                            <li><a href="http://www.geonames.org" target="_blank">GeoNames</a></li>
+                            <li><a href="http://www.weogeo.com" target="_blank">WeoGeo</a></li>
+                        </ul>
+                    </section>
+			    </section>
+                <section>
+                    <section data-background="images/cars.jpg">
+                        <h2 class="overlay">Under the Hood</h2>
+                    </section>
+                    <section>
+                        <h2><a href="http://flask.pocoo.org/" target="_blank">Flask</a></h2>
+                        <p>Python microframework based on Werkzeug and Jinja 2</p>
+                    </section>
+		            <section>
+                        <h2><a href="http://leafletjs.com/" target="_blank">Leaflet.js</a></h2>
+                        <p>Mobile-ready JavaScript library for interactive maps</p>
+                    </section>
+		            <section>
+                        <h2><a href="http://www.mongodb.org/" target="_blank">MongoDB</a></h2>
+                        <p>Schemaless document database</p>
+                    </section>
+		            <section>
+                        <h2>Spatial with MongoDB</h2>
+                        <ul>
+                            <li class="fragment">Handles <a href="http://geojson.org" target="_blank">GeoJSON</a> natively</li>
+                            <li class="fragment">Supports <a href="http://docs.mongodb.org/v2.4/applications/geospatial-indexes/" target="_blank">2D and 2DSphere indices</a></li>
+                            <li class="fragment"><a href="http://docs.mongodb.org/v2.4/reference/operator/query-geospatial/" target="_blank">Geospatial query functionality</a> includes <span class="bold">proximity</span> ($near), <span class="bold">inclusion</span> ($geoWithin), and <span class="bold">intersection</span> ($geoIntersects)</li>
+                        </ul>
+                    </section>
+			    </section>
+                <section>
+                    <section data-background="images/bridge.jpg">
+                        <h2 class="overlay">Platform as a Service</h2>
+                    </section>
+                    <section>
+                        <img src="images/paas.png"/>
+                    </section>
+                    <section>
+                        <h2>Cloud Application Platform</h2>
+                        <img src="images/cloudplatform.png"/>
+                    </section>
+	                <section>
+                        <h2>Why PaaS</h2>
+                        <ul>
+                            <li class="fragment">Focus on code, not config</li>
+                            <li class="fragment">Deployment speed</li>
+                            <li class="fragment">Convenience</li>
+                            <li class="fragment">Efficiency</li>
+                            <li class="fragment">Scalability</li>
+                            <li class="fragment">Polyglot capabilities</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/openshift.png"/>
+                    </section>
+			        <section>
+                        <img src="images/openshift-triangle.png" class="border"/>
+                    </section>
+			        <section>
+                        <img src="images/openshift-gears.png"/>
+                    </section>
+				    <section>
+                        <img src="images/openshift-cartridges.png"/>
+                    </section>
+			        <section>
+                        <img src="images/openshift-deployment.png" class="border"/>
+                    </section>
+                </section>
+                <section>
+                    <section data-background="images/scale.jpg">
+                        <h2 class="overlay">Application Scaling</h2>
+                    </section>
+                    <section>
+                        <h2>Vertical vs Horizontal</h2>
+                        <img src="images/davidvgoliath.jpg" width="475px"/>
+                        <img src="images/ants.jpg" width="450px"/>
+                    </section>
+	                <section>
+                        <h2>Auto-Scaling</h2>
+                        <img src="images/scaling.jpg" class="border"/>
+                    </section>
+				</section>
+              <section data-background="images/demo.jpg">
+                    <h2 class="overlay">Demo</h2>
+                </section>
+                <section data-background="images/nutshell.jpg">
+                    <h2 class="overlay">Summary</h2>
+                </section>
+                <section>
+                    <section>
+                        <h3>Resources and Credits</h3>
+                        <img src="images/dog.jpg" width="600px"/>
+                    </section>
+                    <section>
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="http://www.github.com/codemiller/cloud-craft-php" target="_blank">Find a Loo Application Source</a></li>
+                            <li><a href="https://www.openshift.com/blogs/finding-and-making-sense-of-geospatial-data-on-the-internet" target="_blank">Finding and Making Sense of Geospatial Data on the Internet</a></li>
+                            <li><a href="http://docs.mongodb.org/v2.4/applications/geospatial-indexes/" target="_blank">MongoDB Documentation: Geospatial Indexes and Queries</a></li>
+                            <li><a href="http://www.openshift.com" target="_blank">OpenShift Online</a></li>
+                            <li><a href="https://www.openshift.com/blogs/use-openshift-to-map-river-levels-with-flask-mongodb-leaflet-and-openstreetmaps" target="_blank">Use OpenShift to Map River Levels With Flask, MongoDB, Leaflet, and OpenStreetMaps</a></li>
+                            <li><a href="https://www.openshift.com/blogs/get-more-spatial-in-your-database-with-postgis-21-on-openshift" target="_blank">Using PostGIS 2.1 on OpenShift</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <a href="http://shop.oreilly.com/product/0636920033226.do" target="_blank"><img src="images/bookcover.png"/></a>
+                    </section>
+                    <section>
+                        <h3>Image Credits</h3>
+                        <ul>                            
+                            <li><a href="https://www.flickr.com/photos/23271361@N06/5997956083" target="_blank">Ants Collaborating (Troup Dresser, </a><a href="http://creativecommons.org/licenses/by-nc/2.0/legalcode" target="_blank">CC BY-NC 2.0)</a></li>
+                            <li><a href="https://www.flickr.com/photos/fmmr/7817557168/in/photostream/" target="_blank">David and Goliath [cropped] (Fredrik Rødland, </a><a href="http://creativecommons.org/licenses/by-nc-sa/2.0/legalcode" target="_blank">CC BY-NC-SA 2.0)</a></li>
+                            <li><a href="http://imgur.com/5kXoR" target="_blank">Imgur.com: Toilet Paper Cat</a></li>
+                            <li><a href="http://www.morguefile.com" target="_blank">MorgueFile</a></li>
+                            <li><a href="http://openclipart.org" target="_blank">Open Clip Art Library</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+				    <section>
+					    <h1>Cloud Craft for Spatial Cadets</h1>
+                        <img src="images/cloudpanda.png" width="380px"/>
+                        <h3><a href="http://cloudcraft.codemiller.com">http://cloudcraft.codemiller.com</a></h3>
+                        <p>Katie Miller (<a href="http://twitter.com/codemiller" target="_blank">@codemiller</a>)</br>
+                                         <a href="http://openshift.com" target="_blank">OpenShift</a> Developer Advocate at <a href="http://redhat.com" target="_blank">Red Hat</a></p>
+				    </section>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
